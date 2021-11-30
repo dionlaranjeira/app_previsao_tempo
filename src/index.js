@@ -1,10 +1,9 @@
 import React from 'react'
-import {Text,SafeAreaView} from 'react-native'
-
+import Home from './pages/home'
+import Dashboard from './pages/dashboard';
 export default function App(){
     return(
-        <SafeAreaView>
-            <Text>App previsão do tempo</Text>
-        </SafeAreaView>
+            // <Home/>
+            <Dashboard/>
     );
 }
