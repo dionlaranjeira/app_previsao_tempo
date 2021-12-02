@@ -1,15 +1,12 @@
 import React ,{useState} from 'react'
-import {Text, View, SafeAreaView} from 'react-native'
+import {Text, View, SafeAreaView, Button} from 'react-native'
 import {TextInputBox, Container} from './styles'
 import CardInfors from '../../components/CardInfors'
 export default function Dashboard(){
 
 
-    function handleChangeCity() {
-    
-    }
-
 const [city, setCity] = useState('');
+
 
     return(
         <SafeAreaView>
@@ -21,10 +18,10 @@ const [city, setCity] = useState('');
                         placeholder="Pesquisar por cidade"
                         value={city}
                         onChangeText={(text) => setCity(text)}
-                        onEndEditing={() => handleChangeCity()}
                      />
                 </View>
                 <CardInfors/>
+                
             </Container>
              
       
