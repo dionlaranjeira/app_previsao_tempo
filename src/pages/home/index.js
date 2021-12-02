@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import API from '../../service/api';
+import CardInfors from '../../components/CardInfors';
 
 export default function Home() {
   const [cityName, setCityName] = useState('');
@@ -110,6 +111,8 @@ export default function Home() {
           </View>
         </>
       )}
+
+      <CardInfors />
     </SafeAreaView>
   );
 }
