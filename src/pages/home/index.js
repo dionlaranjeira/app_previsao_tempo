@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
-import {Button,StyleSheet,Text, Image,TextInput ,SafeAreaView, FlatList, TouchableOpacity, StatusBar} from 'react-native'
+import {Button,StyleSheet,Text,View, Image,TextInput ,SafeAreaView, FlatList, TouchableOpacity, StatusBar} from 'react-native'
 import API from '../../service/api';
 
 export default function Home(){
 
     const [cityName, setCityName] = useState("");
     const [citys, setCitys] = useState([]);
+    const [forecast, setForecast] = useState([]);
+    const [showForecast, setShowForecast] = useState(false);
+
+    function haveForecast(){  
+      if (forecast){
+        setShowForecast(true);
+      }
+      else{setShowForecast(false)};
+    }
 
     async function getCitys(cidade) {
         const response = await API.getCityByName(cidade);
@@ -13,6 +22,13 @@ export default function Home(){
         console.warn(citys);
     }
 
+
+    async function getForecast(idCidade){
+      setSelectedId(idCidade);
+      const response = await API.getForecastById(idCidade);
+      setForecast(response);
+      haveForecast();
+    }
 
     const Item = ({ item, onPress, backgroundColor, textColor }) => (
         <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
@@ -30,7 +46,8 @@ export default function Home(){
         return (
           <Item
             item={item}
-            onPress={() => setSelectedId(item.id)}
+            // onPress={() => setSelectedId(item.id)}
+            onPress={() => getForecast(item.id)}
             backgroundColor={{ backgroundColor }}
             textColor={{ color }}
           />
@@ -70,7 +87,22 @@ export default function Home(){
         keyExtractor={(item) => item.id}
         extraData={selectedId}
       />
-        
+
+      {
+        showForecast && (
+      <>  
+
+      
+      <Text>Previsão para a semana</Text>
+      <View>
+        <Text>Icone clima </Text>
+        <Text>Dia </Text>
+        <Text>Temperatura</Text>
+        <Text>Vento </Text>
+        <Text>clouds 33% </Text>
+      </View>
+        </>)
+}
         </SafeAreaView>
       
     );
