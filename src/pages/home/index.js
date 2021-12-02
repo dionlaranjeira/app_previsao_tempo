@@ -79,6 +79,7 @@ export default function Home() {
         onChangeText={setCityName}
         value={cityName}
         placeholder="Pesquise por uma cidade"
+        placeholderTextColor="#fff"
       />
 
       <Button
