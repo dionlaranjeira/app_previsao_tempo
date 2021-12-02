@@ -12,6 +12,8 @@ target 'app_previsao_tempo' do
     :hermes_enabled => false
   )
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'app_previsao_tempoTests' do
     inherit! :complete
     # Pods for testing

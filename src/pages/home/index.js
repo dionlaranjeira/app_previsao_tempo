@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
   StatusBar,
 } from 'react-native';
-import {InputFindCity} from '../../components/InputFindCity';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import API from '../../service/api';
 
 export default function Home() {
@@ -81,7 +81,7 @@ export default function Home() {
         placeholder="Pesquise por uma cidade"
         placeholderTextColor="#fff"
       />
-
+      <Icon name="camera" color="#24BFF2" size={24} />
       <Button
         style={styles.btnFind}
         onPress={() => getCitys(cityName)}
