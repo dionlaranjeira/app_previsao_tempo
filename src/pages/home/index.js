@@ -74,21 +74,22 @@ export default function Home() {
     <SafeAreaView style={styles.container}>
       {/* <Image style={{width:"100%", height:"100%"}} source={require('../../assets/logo_linux_fundo.jpeg')} /> */}
 
-      <TextInput
-        style={styles.fildFindCity}
-        onChangeText={setCityName}
-        value={cityName}
-        placeholder="Pesquise por uma cidade"
-        placeholderTextColor="#fff"
-      />
-      <Icon name="camera" color="#24BFF2" size={24} />
-      <Button
-        style={styles.btnFind}
-        onPress={() => getCitys(cityName)}
-        title="Pesquisar"
-        color="#841584"
-        accessibilityLabel="Pesquise por uma cidade"
-      />
+      <View style={styles.conteinerFindCity}>
+        <TextInput
+          style={styles.fildFindCity}
+          onChangeText={setCityName}
+          value={cityName}
+          placeholder="Pesquise por uma cidade"
+          placeholderTextColor="#fff"
+        />
+        <Icon
+          name="search"
+          onPress={() => getCitys(cityName)}
+          color="#fff"
+          size={24}
+          style={styles.iconSeach}
+        />
+      </View>
 
       <FlatList
         data={citys}
@@ -129,15 +130,21 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
 
-  fildFindCity: {
-    marginBottom: 16,
+  conteinerFindCity: {
+    flexDirection: 'row',
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     borderColor: '#fff',
     borderWidth: 1,
-    color: '#fff',
     borderRadius: 8,
+  },
+
+  fildFindCity: {
+    color: '#fff',
     padding: 8,
   },
-  btnFind: {
-    backgroundColor: '#f00',
+  iconSeach: {
+    marginRight: 8,
   },
 });
