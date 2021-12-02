@@ -74,7 +74,9 @@ export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
       {/* <Image style={{width:"100%", height:"100%"}} source={require('../../assets/logo_linux_fundo.jpeg')} /> */}
-
+      <View style={styles.leftConteiner}>
+        <Text style={styles.textWelcome}  >Seja Bem Vindo</Text>
+        <Text style={styles.textSelectCity}  >Selecione uma cidade</Text>
       <View style={styles.conteinerFindCity}>
         <TextInput
           style={styles.fildFindCity}
@@ -92,38 +94,87 @@ export default function Home() {
         />
       </View>
 
-      <FlatList
+      {/* <FlatList
         data={citys}
         renderItem={renderItem}
         keyExtractor={item => item.id}
         extraData={selectedId}
-      />
+      /> */}
 
-      {showForecast && (
-        <>
-          <Text>Previsão para a semana</Text>
-          <View>
-            <Text>Icone clima </Text>
-            <Text>Dia </Text>
-            <Text>Temperatura</Text>
-            <Text>Vento </Text>
-            <Text>clouds 33% </Text>
-          </View>
-        </>
-      )}
+        
+          <Text style={styles.textForecastWeek} >Previsão para a semana</Text>
 
-      <CardInfors />
+        <View style={styles.containerCards} >
+          <CardInfors />
+          <CardInfors />
+          <CardInfors />
+          <CardInfors />
+        </View>
+
+        <View style={styles.containerCards} >
+          <CardInfors />
+          <CardInfors />
+          <CardInfors />
+        </View>
+
+      </View>
+      <View style={styles.rightConteiner}>
+        <Text  >RIGHT CONTEINER</Text>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 10,
     padding: 8,
     marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: '#841584',
+    backgroundColor: '#503268',
   },
+
+  leftConteiner:{
+    marginTop: 8,
+    marginBottom: 8,
+    flex:7,
+    marginRight: 32,
+
+  },
+
+  textWelcome:{
+    marginTop: 16,
+    color: "#fff",
+  },
+
+  textSelectCity:{
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
+
+  textForecastWeek:{
+    color:"#fff",
+    fontWeight: "bold",
+    fontSize: 8,
+  },
+
+  containerCards:{
+    flexDirection: 'row',
+  },
+
+  rightConteiner:{
+    marginTop: 8,
+    marginBottom: 8,
+    backgroundColor: "#fff",
+    flex: 3,
+    height: "95%",
+    borderRadius: 16,
+    padding:16,
+  },
+
   item: {
     padding: 20,
     marginVertical: 8,
@@ -134,6 +185,8 @@ const styles = StyleSheet.create({
   },
 
   conteinerFindCity: {
+    marginTop: 8,
+    marginBottom: 16,
     flexDirection: 'row',
     alignContent: 'center',
     alignItems: 'center',

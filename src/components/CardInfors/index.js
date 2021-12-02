@@ -26,20 +26,12 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
     padding: 8,
-    width: '40%',
-    height: '30%',
-    marginTop: 50,
+    width: "24%",
+    marginBottom: 16,
+    marginRight: 8,
     borderColor: '#fff',
     borderWidth: 1,
-    borderRadius: 30,
-  },
-  bigBlue: {
-    color: 'blue',
-    fontWeight: 'bold',
-    fontSize: 30,
-  },
-  red: {
-    color: 'red',
+    borderRadius: 16,
   },
 
   textDay: {
@@ -50,12 +42,12 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   textInforTemp: {
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#fff',
   },
   lineTop: {
-    marginTop: 4,
+    marginBottom: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -67,6 +59,6 @@ const styles = StyleSheet.create({
     borderRadius: 1,
     backgroundColor: '#fe6e00',
     left: 30,
-    bottom: -1,
+    bottom: -2,
   },
 });

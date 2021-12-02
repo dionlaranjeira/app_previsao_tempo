@@ -11,6 +11,7 @@ const [city, setCity] = useState('');
     return(
         <SafeAreaView>
             <Container>
+                <View>
                 <View style={{backgroundColor:"#00ff00"}} >
                     <Text>Seja bem vindo</Text>
                     <Text>Selecione uma cidade</Text>
@@ -21,7 +22,10 @@ const [city, setCity] = useState('');
                      />
                 </View>
                 <CardInfors/>
-                
+                </View>
+                <View>
+                    <Text>RIGHT CONTEINER</Text>
+                </View>    
             </Container>
              
       
