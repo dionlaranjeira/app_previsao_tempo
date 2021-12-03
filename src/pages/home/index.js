@@ -76,50 +76,48 @@ export default function Home() {
     <SafeAreaView style={styles.container}>
       {/* <Image style={{width:"100%", height:"100%"}} source={require('../../assets/logo_linux_fundo.jpeg')} /> */}
       <View style={styles.leftConteiner}>
-        <Text style={styles.textWelcome}  >Seja Bem Vindo</Text>
-        <Text style={styles.textSelectCity}  >Selecione uma cidade</Text>
-      <View style={styles.conteinerFindCity}>
-        <TextInput
-          style={styles.fildFindCity}
-          onChangeText={setCityName}
-          value={cityName}
-          placeholder="Pesquise por uma cidade"
-          placeholderTextColor="#fff"
+        <Text style={styles.textWelcome}>Seja Bem Vindo</Text>
+        <Text style={styles.textSelectCity}>Selecione uma cidade</Text>
+        <View style={styles.conteinerFindCity}>
+          <TextInput
+            style={styles.fildFindCity}
+            onChangeText={setCityName}
+            value={cityName}
+            placeholder="Pesquise por uma cidade"
+            placeholderTextColor="#fff"
+          />
+          <Icon
+            name="search"
+            onPress={() => getCitys(cityName)}
+            color="#fff"
+            size={24}
+            style={styles.iconSeach}
+          />
+        </View>
+
+        <FlatList
+          data={citys}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+          extraData={selectedId}
         />
-        <Icon
-          name="search"
-          onPress={() => getCitys(cityName)}
-          color="#fff"
-          size={24}
-          style={styles.iconSeach}
-        />
-      </View>
 
-      {/* <FlatList
-        data={citys}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        extraData={selectedId}
-      /> */}
+        <Text style={styles.textForecastWeek}>Previsão para a semana:</Text>
 
-        
-          <Text style={styles.textForecastWeek} >Previsão para a semana</Text>
-
-        <View style={styles.containerCards} >
+        <View style={styles.containerCards}>
           <CardInfors />
           <CardInfors />
           <CardInfors />
           <CardInfors />
         </View>
 
-        <View style={styles.containerCards} >
+        <View style={styles.containerCards}>
           <CardInfors />
           <CardInfors />
           <CardInfors />
         </View>
-
       </View>
-      <CardInforFull/>
+      <CardInforFull />
     </SafeAreaView>
   );
 }
@@ -131,36 +129,35 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 10,
     padding: 8,
-    marginTop: StatusBar.currentHeight || 0,
     backgroundColor: '#503268',
   },
 
-  leftConteiner:{
+  leftConteiner: {
     marginTop: 8,
     marginBottom: 8,
-    flex:7,
+    flex: 7,
     marginRight: 32,
-
   },
 
-  textWelcome:{
+  textWelcome: {
     marginTop: 16,
-    color: "#fff",
+    color: '#fff',
   },
 
-  textSelectCity:{
-    color: "#fff",
-    fontWeight: "bold",
+  textSelectCity: {
+    color: '#fff',
+    fontWeight: 'bold',
     fontSize: 16,
   },
 
-  textForecastWeek:{
-    color:"#fff",
-    fontWeight: "bold",
+  textForecastWeek: {
+    color: '#fff',
+    marginBottom: 4,
+    fontWeight: 'bold',
     fontSize: 8,
   },
 
-  containerCards:{
+  containerCards: {
     flexDirection: 'row',
   },
 
@@ -175,7 +172,7 @@ const styles = StyleSheet.create({
 
   conteinerFindCity: {
     marginTop: 8,
-    marginBottom: 16,
+    marginBottom: 8,
     flexDirection: 'row',
     alignContent: 'center',
     alignItems: 'center',

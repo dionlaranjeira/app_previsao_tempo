@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
     padding: 8,
-    width: "24%",
-    marginBottom: 16,
+    width: '24%',
+    marginBottom: 8,
     marginRight: 8,
     borderColor: '#fff',
     borderWidth: 1,
@@ -36,18 +36,22 @@ const styles = StyleSheet.create({
 
   textDay: {
     color: '#fff',
+    fontSize: 8,
+    opacity: 0.4,
   },
 
   textInfor: {
     color: '#fff',
+    fontSize: 8,
+    opacity: 0.4,
   },
   textInforTemp: {
-    fontSize: 18,
+    fontSize: 12,
     fontWeight: 'bold',
     color: '#fff',
   },
   lineTop: {
-    marginBottom: 16,
+    marginBottom: 4,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
