@@ -26,7 +26,7 @@ const CardInfors = () => {
 
         </View>  
         <View style={styles.lineMiddle}>
-            <Text style={styles.txtTemp} >28ºc </Text>
+            <Text style={styles.txtTemp} >28ºc</Text>
             <Text style={styles.txtMiddle} >Scotterd cloudes</Text>
             <Text style={styles.txtMiddle} >14:03 Fev 19</Text>
         </View>
@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
         fontSize:38,
         fontWeight: 'bold',
       },
-
       txtMiddle:{
         color: "#503268",
         fontSize: 10,
