@@ -14,6 +14,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import API from '../../service/api';
 import CardInfors from '../../components/CardInfors';
+import CardInforFull from '../../components/CardInforFull';
 
 export default function Home() {
   const [cityName, setCityName] = useState('');
@@ -118,9 +119,7 @@ export default function Home() {
         </View>
 
       </View>
-      <View style={styles.rightConteiner}>
-        <Text  >RIGHT CONTEINER</Text>
-      </View>
+      <CardInforFull/>
     </SafeAreaView>
   );
 }
@@ -163,16 +162,6 @@ const styles = StyleSheet.create({
 
   containerCards:{
     flexDirection: 'row',
-  },
-
-  rightConteiner:{
-    marginTop: 8,
-    marginBottom: 8,
-    backgroundColor: "#fff",
-    flex: 3,
-    height: "95%",
-    borderRadius: 16,
-    padding:16,
   },
 
   item: {
