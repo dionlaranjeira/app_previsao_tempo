@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
 
       lineBotton: {
         borderTopColor: "#503268",
-        borderTopWidth: 2,  
+        borderTopWidth: 1,  
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
