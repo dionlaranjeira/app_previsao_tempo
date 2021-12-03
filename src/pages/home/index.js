@@ -9,18 +9,23 @@ import {
   SafeAreaView,
   FlatList,
   TouchableOpacity,
-  StatusBar,
+  ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import API from '../../service/api';
 import CardInfors from '../../components/CardInfors';
 import CardInforFull from '../../components/CardInforFull';
+import ModalLoad from '../../components/ModalLoad';
+import ModalSelectCity from '../../components/ModalSelectCity';
 
 export default function Home() {
   const [cityName, setCityName] = useState('');
   const [citys, setCitys] = useState([]);
   const [forecast, setForecast] = useState([]);
   const [showForecast, setShowForecast] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [showModalCitys, setShowModalCitys] = useState(false);
+  const [closingModalCitys, setClosingModalCitys] = useState(false);
 
   function haveForecast() {
     if (forecast) {
@@ -31,16 +36,22 @@ export default function Home() {
   }
 
   async function getCitys(cidade) {
+    setLoading(true);
     const response = await API.getCityByName(cidade);
     setCitys(response);
     console.warn(citys);
+    setLoading(false);
+    if (citys) {
+      setShowModalCitys(true);
+    }
   }
 
   async function getForecast(idCidade) {
+    console.warn('ID CIDADE!!!' + idCidade);
     setSelectedId(idCidade);
     const response = await API.getForecastById(idCidade);
     setForecast(response);
-    haveForecast();
+    setClosingModalCitys(false);
   }
 
   const Item = ({item, onPress, backgroundColor, textColor}) => (
@@ -118,6 +129,14 @@ export default function Home() {
         </View>
       </View>
       <CardInforFull />
+      <ModalLoad onRequestClose={() => setLoading(false)} visible={loading} />
+      <ModalSelectCity
+        title="Selecione a cidade"
+        onRequestClose={() => setClosingModalCitys(false)}
+        visible={showModalCitys}
+        data={citys}
+        onPressAction={item => getForecast(item.id)}
+      />
     </SafeAreaView>
   );
 }
