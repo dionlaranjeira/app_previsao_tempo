@@ -25,16 +25,9 @@ export default function Home() {
   const [showForecast, setShowForecast] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showModalCitys, setShowModalCitys] = useState(false);
-  const [closingModalCitys, setClosingModalCitys] = useState(false);
+  const [haveForecast, setHaveForecast] = useState(false);
 
-  function haveForecast() {
-    if (forecast) {
-      setShowForecast(true);
-    } else {
-      setShowForecast(false);
-    }
-  }
-
+  
   async function getCitys(cidade) {
     setLoading(true);
     const response = await API.getCityByName(cidade);
@@ -51,7 +44,13 @@ export default function Home() {
     setSelectedId(idCidade);
     const response = await API.getForecastById(idCidade);
     setForecast(response);
-    setClosingModalCitys(false);
+    console.warn(forecast);
+    setShowModalCitys(false);
+
+    if(forecast){
+      setHaveForecast(true);
+    }
+
   }
 
   const Item = ({item, onPress, backgroundColor, textColor}) => (
@@ -87,7 +86,7 @@ export default function Home() {
     <SafeAreaView style={styles.container}>
       {/* <Image style={{width:"100%", height:"100%"}} source={require('../../assets/logo_linux_fundo.jpeg')} /> */}
       <View style={styles.leftConteiner}>
-        <Text style={styles.textWelcome}>Seja Bem Vindo</Text>
+        <Text style={styles.textWelcome}>Seja Bem Vindo!</Text>
         <Text style={styles.textSelectCity}>Selecione uma cidade</Text>
         <View style={styles.conteinerFindCity}>
           <TextInput
@@ -106,12 +105,12 @@ export default function Home() {
           />
         </View>
 
-        <FlatList
+        {/* <FlatList
           data={citys}
           renderItem={renderItem}
           keyExtractor={item => item.id}
           extraData={selectedId}
-        />
+        /> */}
 
         <Text style={styles.textForecastWeek}>Previsão para a semana:</Text>
 
@@ -129,14 +128,16 @@ export default function Home() {
         </View>
       </View>
       <CardInforFull />
+      <ModalLoad onRequestClose={() => setHaveForecast(false)} visible={haveForecast} haveForecast={haveForecast} />
       <ModalLoad onRequestClose={() => setLoading(false)} visible={loading} />
       <ModalSelectCity
         title="Selecione a cidade"
-        onRequestClose={() => setClosingModalCitys(false)}
+        onRequestClose={() => setShowModalCitys(false)}
         visible={showModalCitys}
         data={citys}
         onPressAction={item => getForecast(item.id)}
       />
+
     </SafeAreaView>
   );
 }

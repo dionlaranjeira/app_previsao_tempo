@@ -4,28 +4,26 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const ModalLoad = ({
   onRequestClose,
   visible,
-  getCitys = false,
-  submit,
-  sucess,
+  haveForecast,
 }) => {
   return (
     <Container
       animationType="fade"
       statusBarTranslucent={true}
       onRequestClose={onRequestClose}
-      visible={visible}>
+      visible={visible}>    
       <ModalContainer>
         <Spinner />
         <Info>
-          {getCitys ? 'Obtendo previsões do tempo...' : 'Buscando cidades...'}
+          {haveForecast ? 'Obtendo previsões do tempo...' : 'Buscando cidades...'}
         </Info>
-        <Icon
-          name="search"
+         <Icon
+          name={haveForecast? "cloud" :"search"}
           color="#fff"
           size={24}
           // style={styles.iconSeach}
         />
-        {getCitys && <Info>{`${sucess} de ${submit}`}</Info>}
+
       </ModalContainer>
     </Container>
   );
