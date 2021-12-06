@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {
   Button,
   StyleSheet,
@@ -27,29 +27,38 @@ export default function Home() {
   const [showModalForecast, setShowModalForecast] = useState(false);
   const [daySelect, setDaySelect] = useState(0);
 
+
+  useEffect(() => {
+    // OBTEM PREVISÃO PADRÃO - BRASÍLIA
+    getForecast(3469058)
+  }, []);
+
   async function getCitys(cidade) {
     setLoading(true);
     const response = await API.getCityByName(cidade);
     setCitys(response);
-    console.warn(citys);
     setLoading(false);
     if (citys) {
       setShowModalCitys(true);
     }
   }
 
-  
+  function cardSelect(index){
+    if(index == daySelect){
+      return true;
+    }else{
+      return false;
+    }
+
+  }
 
   async function getForecast(idCidade) {
-    // console.warn('ID CIDADE!!!' + idCidade);
     setShowModalForecast(true);
     setSelectedId(idCidade);
     const response = await API.getForecastById(idCidade);
     setForecast(response);
-    console.warn('FORECAST-->' + forecast);
     setShowModalCitys(false);
     setShowModalForecast(false);
-    console.warn(forecast[0]);
   }
 
   const Item = ({item, onPress, backgroundColor, textColor}) => (
@@ -69,7 +78,6 @@ export default function Home() {
     return (
       <Item
         item={item}
-        // onPress={() => setSelectedId(item.id)}
         onPress={() => getForecast(item.id)}
         backgroundColor={{backgroundColor}}
         textColor={{color}}
@@ -112,15 +120,15 @@ export default function Home() {
 
         <View style={styles.containerCards}>
           
-        { showCardInfo(forecast[0]) && (<CardInfors data={forecast[0]} onPressAction={() => setDaySelect(0)} />)}
-        { showCardInfo(forecast[1]) && (<CardInfors data={forecast[1]} onPressAction={() => setDaySelect(1)} />)}
-        { showCardInfo(forecast[2]) && (<CardInfors data={forecast[2]} onPressAction={() => setDaySelect(2)} />)}
+        { showCardInfo(forecast[0]) && (<CardInfors data={forecast[0]} onPressAction={() => setDaySelect(0)} selected={cardSelect(0)}  />)}
+        { showCardInfo(forecast[1]) && (<CardInfors data={forecast[1]} onPressAction={() => setDaySelect(1)} selected={cardSelect(1)} />)}
+        { showCardInfo(forecast[2]) && (<CardInfors data={forecast[2]} onPressAction={() => setDaySelect(2)} selected={cardSelect(2)} />)}
         </View>
 
         <View style={styles.containerCards}>
-        { showCardInfo(forecast[3]) && (<CardInfors data={forecast[3]} onPressAction={() => setDaySelect(3)} />)}
-        { showCardInfo(forecast[4]) && (<CardInfors data={forecast[4]} onPressAction={() => setDaySelect(4)} />)}
-        { showCardInfo(forecast[5]) && (<CardInfors data={forecast[5]} onPressAction={() => setDaySelect(5)} />)}
+        { showCardInfo(forecast[3]) && (<CardInfors data={forecast[3]} onPressAction={() => setDaySelect(3)} selected={cardSelect(3)} />)}
+        { showCardInfo(forecast[4]) && (<CardInfors data={forecast[4]} onPressAction={() => setDaySelect(4)} selected={cardSelect(4)} />)}
+        { showCardInfo(forecast[5]) && (<CardInfors data={forecast[5]} onPressAction={() => setDaySelect(5)} selected={cardSelect(5)} />)}
         </View>
       </View>
       <CardInforFull data={forecast[daySelect]} />
@@ -155,7 +163,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
     marginBottom: 8,
     flex: 7,
-    marginRight: 32,
+    marginRight: 16,
   },
 
   textWelcome: {
@@ -171,13 +179,15 @@ const styles = StyleSheet.create({
 
   textForecastWeek: {
     color: '#fff',
+    marginTop:4,
     marginBottom: 4,
     fontWeight: 'bold',
-    fontSize: 8,
+    fontSize: 10,
   },
 
   containerCards: {
     flexDirection: 'row',
+    justifyContent: 'center',
   },
 
   item: {
