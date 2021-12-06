@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
   textDay: {
     color: '#fff',
     fontSize: 8,
-    opacity: 0.4,
+    opacity: 0.8,
   },
 
   textInfor: {
     color: '#fff',
     fontSize: 8,
-    opacity: 0.4,
+    opacity: 0.7,
   },
   textInforTemp: {
     fontSize: 12,
