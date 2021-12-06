@@ -1,27 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
-const CardInfors = ({data}) => {
-  // const data = {
-  //   temp: '25.27ºC',
-  //   wind: 'Brisa leve, 6.23 km/h, Leste (79)',
-  //   cloudiness: 'Brisa leve',
-  //   pressure: '1011 hpa',
-  //   humidity: '100%',
-  //   sunrise: '05:42',
-  //   sunset: '18:00',
-  //   icon: '10d',
-  //   date: '6 de Dezembro',
-  //   clouds: '75%',
-  //   wind_speed: '6.23 km/h',
-  //   coords: '-3.1019, -60.025',
-  //   day: 'SEG',
-  // };
-
+const CardInfors = ({data, onPressAction}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} 
+    onPress={() => onPressAction()}>
+    
       <View style={styles.lineTop}>
         <Icon name="cloud" color="#fff" size={24} />
         <Text style={styles.textDay}>{data?.day}</Text>
@@ -32,7 +18,8 @@ const CardInfors = ({data}) => {
         <Text style={styles.textInfor}>Nuvens: {data?.clouds}</Text>
       </View>
       <View style={styles.lineOrange} />
-    </View>
+  
+    </TouchableOpacity>
   );
 };
 

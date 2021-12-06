@@ -112,15 +112,15 @@ export default function Home() {
 
         <View style={styles.containerCards}>
           
-        { showCardInfo(forecast[2]) && (<CardInfors data={forecast[0]} />)}
-        { showCardInfo(forecast[2]) && (<CardInfors data={forecast[1]} />)}
-          { showCardInfo(forecast[2]) && (<CardInfors data={forecast[2]} />)}
+        { showCardInfo(forecast[0]) && (<CardInfors data={forecast[0]} onPressAction={() => setDaySelect(0)} />)}
+        { showCardInfo(forecast[1]) && (<CardInfors data={forecast[1]} onPressAction={() => setDaySelect(1)} />)}
+        { showCardInfo(forecast[2]) && (<CardInfors data={forecast[2]} onPressAction={() => setDaySelect(2)} />)}
         </View>
 
         <View style={styles.containerCards}>
-        { showCardInfo(forecast[3]) && (<CardInfors data={forecast[3]} />)}
-          { showCardInfo(forecast[4]) && (<CardInfors data={forecast[4]} />)}
-          { showCardInfo(forecast[5]) && (<CardInfors data={forecast[5]} />)}
+        { showCardInfo(forecast[3]) && (<CardInfors data={forecast[3]} onPressAction={() => setDaySelect(3)} />)}
+        { showCardInfo(forecast[4]) && (<CardInfors data={forecast[4]} onPressAction={() => setDaySelect(4)} />)}
+        { showCardInfo(forecast[5]) && (<CardInfors data={forecast[5]} onPressAction={() => setDaySelect(5)} />)}
         </View>
       </View>
       <CardInforFull data={forecast[daySelect]} />
