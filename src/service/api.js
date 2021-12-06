@@ -1,4 +1,5 @@
-const ip = 'http://192.168.0.104:5000/';
+// ip - endereco do servidor API
+const ip = 'http://192.168.43.5:5000';
 class API {
   async getCityByName(cidade) {
     try {

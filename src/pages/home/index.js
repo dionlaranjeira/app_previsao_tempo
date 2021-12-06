@@ -25,9 +25,8 @@ export default function Home() {
   const [showForecast, setShowForecast] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showModalCitys, setShowModalCitys] = useState(false);
-  const [haveForecast, setHaveForecast] = useState(false);
+  const [showModalForecast, setShowModalForecast] = useState(false);
 
-  
   async function getCitys(cidade) {
     setLoading(true);
     const response = await API.getCityByName(cidade);
@@ -40,17 +39,15 @@ export default function Home() {
   }
 
   async function getForecast(idCidade) {
-    console.warn('ID CIDADE!!!' + idCidade);
+    // console.warn('ID CIDADE!!!' + idCidade);
+    setShowModalForecast(true);
     setSelectedId(idCidade);
     const response = await API.getForecastById(idCidade);
     setForecast(response);
-    console.warn(forecast);
+    console.warn('FORECAST-->' + forecast);
     setShowModalCitys(false);
-
-    if(forecast){
-      setHaveForecast(true);
-    }
-
+    setShowModalForecast(false);
+    console.warn(forecast[0]);
   }
 
   const Item = ({item, onPress, backgroundColor, textColor}) => (
@@ -115,20 +112,24 @@ export default function Home() {
         <Text style={styles.textForecastWeek}>Previsão para a semana:</Text>
 
         <View style={styles.containerCards}>
-          <CardInfors />
-          <CardInfors />
-          <CardInfors />
-          <CardInfors />
+          {/* <OrdemService data={inspection} /> */}
+          <CardInfors data={forecast[0]} />
+          <CardInfors data={forecast[1]} />
+          <CardInfors data={forecast[2]} />
         </View>
 
         <View style={styles.containerCards}>
-          <CardInfors />
-          <CardInfors />
-          <CardInfors />
+          <CardInfors data={forecast[3]} />
+          <CardInfors data={forecast[4]} />
+          <CardInfors data={forecast[5]} />
         </View>
       </View>
       <CardInforFull />
-      <ModalLoad onRequestClose={() => setHaveForecast(false)} visible={haveForecast} haveForecast={haveForecast} />
+      <ModalLoad
+        onRequestClose={() => setShowModalForecast(false)}
+        visible={showModalForecast}
+        haveForecast={true}
+      />
       <ModalLoad onRequestClose={() => setLoading(false)} visible={loading} />
       <ModalSelectCity
         title="Selecione a cidade"
@@ -137,7 +138,6 @@ export default function Home() {
         data={citys}
         onPressAction={item => getForecast(item.id)}
       />
-
     </SafeAreaView>
   );
 }
