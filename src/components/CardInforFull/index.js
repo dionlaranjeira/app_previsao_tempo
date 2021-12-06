@@ -6,15 +6,17 @@ import {
   } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const CardInfors = () => {
+const CardInfors = ({data}) => {
+
+   
 
     return(
         <View style={styles.conteiner}>
 
         <View style={styles.lineTop} > 
             <View>
-            <Text>Hoje</Text>
-            <Text style={styles.textCity} >São Paulo</Text>
+            <Text>{data?.day}</Text>
+            <Text style={styles.textCity} >{data?.city}</Text>
             </View>
             <Icon
           name="cloud"
@@ -26,29 +28,29 @@ const CardInfors = () => {
 
         </View>  
         <View style={styles.lineMiddle}>
-            <Text style={styles.txtTemp} >28ºc</Text>
-            <Text style={styles.txtMiddle} >Scotterd cloudes</Text>
-            <Text style={styles.txtMiddle} >14:03 Fev 19</Text>
+            <Text style={styles.txtTemp} >{data?.temp.substring(0,2)}ºC</Text>
+            <Text style={styles.txtMiddle} >{data?.cloudiness}</Text>
+            <Text style={styles.txtMiddle} >{data?.date}</Text>
         </View>
 
         <View style={styles.lineBotton}>
             <View style={styles.linebottonLeft}>
-            <Text style={styles.txtBottonLeft}  >Wind</Text>
-            <Text style={styles.txtBottonLeft} >Cloudiness</Text>
-            <Text style={styles.txtBottonLeft} >Pressure</Text>
-            <Text style={styles.txtBottonLeft} >Humidity</Text>
-            <Text style={styles.txtBottonLeft} >Sunrise</Text>
-            <Text style={styles.txtBottonLeft} >Sunset</Text>
-            <Text style={styles.txtBottonLeft} >Geo coords</Text>
+            <Text style={styles.txtBottonLeft}  >Vento</Text>
+            <Text style={styles.txtBottonLeft} >Nebulosidade</Text>
+            <Text style={styles.txtBottonLeft} >Pressão</Text>
+            <Text style={styles.txtBottonLeft} >Umidade</Text>
+            <Text style={styles.txtBottonLeft} >Nascer do sol</Text>
+            <Text style={styles.txtBottonLeft} >Por do sol</Text>
+            <Text style={styles.txtBottonLeft} >Geo localização</Text>
             </View>
             <View style={styles.linebottonRight} >
-            <Text style={styles.txtBottonRight} >Wind</Text>
-            <Text style={styles.txtBottonRight} >Cloudiness</Text>
-            <Text style={styles.txtBottonRight} >Pressure</Text>
-            <Text style={styles.txtBottonRight} >Humidity</Text>
-            <Text style={styles.txtBottonRight} >Sunrise</Text>
-            <Text style={styles.txtBottonRight} >Sunset</Text>
-            <Text style={styles.txtBottonRight} >Geo coords</Text>
+            <Text style={styles.txtBottonRight} >{data?.wind}</Text>
+            <Text style={styles.txtBottonRight} >{data?.cloudiness}</Text>
+            <Text style={styles.txtBottonRight} >{data?.pressure}</Text>
+            <Text style={styles.txtBottonRight} >{data?.humidity}</Text>
+            <Text style={styles.txtBottonRight} >{data?.sunrise}</Text>
+            <Text style={styles.txtBottonRight} >{data?.sunset}</Text>
+            <Text style={styles.txtBottonRight} >{data?.coords}</Text>
             </View>
                 
         </View>  
@@ -64,11 +66,13 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginTop: 8,
         marginBottom: 8,
+        marginRight: 8,
         backgroundColor: "#fff",
-        flex: 3,
+        flex: 5,
         height: "95%",
         borderRadius: 16,
         padding:16,
+        paddingRight:9,
       },
 
       lineTop:{

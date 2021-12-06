@@ -8,7 +8,6 @@ import {
   TextInput,
   SafeAreaView,
   FlatList,
-  TouchableOpacity,
   ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -26,6 +25,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [showModalCitys, setShowModalCitys] = useState(false);
   const [showModalForecast, setShowModalForecast] = useState(false);
+  const [daySelect, setDaySelect] = useState(0);
 
   async function getCitys(cidade) {
     setLoading(true);
@@ -37,6 +37,8 @@ export default function Home() {
       setShowModalCitys(true);
     }
   }
+
+  
 
   async function getForecast(idCidade) {
     // console.warn('ID CIDADE!!!' + idCidade);
@@ -75,8 +77,12 @@ export default function Home() {
     );
   };
 
-  function teste() {
-    console.warn('Clicado!');
+  function showCardInfo (forecast) {
+    if(forecast){
+      return true;
+    }else{
+      return false;
+    }
   }
 
   return (
@@ -101,30 +107,23 @@ export default function Home() {
             style={styles.iconSeach}
           />
         </View>
-
-        {/* <FlatList
-          data={citys}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-          extraData={selectedId}
-        /> */}
-
-        <Text style={styles.textForecastWeek}>Previsão para a semana:</Text>
+        {showCardInfo(forecast[0]) &&
+        (<Text style={styles.textForecastWeek}>Previsão para a semana:</Text>)}
 
         <View style={styles.containerCards}>
-          {/* <OrdemService data={inspection} /> */}
-          <CardInfors data={forecast[0]} />
-          <CardInfors data={forecast[1]} />
-          <CardInfors data={forecast[2]} />
+          
+        { showCardInfo(forecast[2]) && (<CardInfors data={forecast[0]} />)}
+        { showCardInfo(forecast[2]) && (<CardInfors data={forecast[1]} />)}
+          { showCardInfo(forecast[2]) && (<CardInfors data={forecast[2]} />)}
         </View>
 
         <View style={styles.containerCards}>
-          <CardInfors data={forecast[3]} />
-          <CardInfors data={forecast[4]} />
-          <CardInfors data={forecast[5]} />
+        { showCardInfo(forecast[3]) && (<CardInfors data={forecast[3]} />)}
+          { showCardInfo(forecast[4]) && (<CardInfors data={forecast[4]} />)}
+          { showCardInfo(forecast[5]) && (<CardInfors data={forecast[5]} />)}
         </View>
       </View>
-      <CardInforFull />
+      <CardInforFull data={forecast[daySelect]} />
       <ModalLoad
         onRequestClose={() => setShowModalForecast(false)}
         visible={showModalForecast}
