@@ -20,29 +20,29 @@
 <h3>Algumas refatorações precisam ser feitas no código, para o mesmo se torne mais fácil de compreender e dá manuntenção.</h3> 
 
 <h1>#instalacao</h1>
-<p>Esse aplicativo foi desenvolvido utilizando o FrameWork React Native, por isso, siga todas as orientações para configuração do ambiente de desenvolvimento listatas em: https://reactnative.dev/docs/0.61/enviroment-setup</p>
+<p>Esse aplicativo foi desenvolvido utilizando o FrameWork React Native, por isso, siga todas as orientações para configuração do ambiente de desenvolvimento listatas em: https://reactnative.dev/docs/0.61/enviroment-setup .</p>
 <p>Clone o aplicativo para sua máquina.</p>
-<p>Certifique-se que o yarn está devidamento configurado em seu ambiente de desenvolvimento</p>
-<p>Abra o terminal na pasta do aplicativo e baixe as depências utilizando o comando "yarn" </>
-<p>No arquivo service (https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/src/service/api.js), altere a "const ip" com o endereço do servidor python, já mencionado na seção <span>#sobre</span></p>
-<p>Certifique-se que seu dispositivo possuem conexão com o servidor python</p>
-<p>Execute o aplicativo com o comando "yarn ios" ou "yarn android"</p> 
+<p>Certifique-se que o yarn está devidamento configurado em seu ambiente de desenvolvimento.</p>
+<p>Abra o terminal na pasta do aplicativo e baixe as depências utilizando o comando "yarn".</p>
+<p>No arquivo service (https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/src/service/api.js), altere a "const ip" com o endereço do servidor python, já mencionado na seção <span>#sobre</span>.</p>
+<p>Certifique-se que seu dispositivo possuem conexão com o servidor python.</p>
+<p>Execute o aplicativo com o comando "yarn ios" ou "yarn android".</p> 
 
 <h1>#Utilização</h1>
 
 
-<p>Esse aplitivo está com o laytou otimizado para ser utilizado na orientação horizontal</p>
-<p>Por padrão, o aplicativo inicia obtendo informações da cidade de Brasília-DF</p>
-<p>O Usuário pode pesquisar por uma cidade utilizando um campo de pesquisa na parte superior do aplicativo</p>
-<p>Após a pesquisa, o usuário pode selecionar uma cidade afim de obter previsões do tempo</p>
-<p>O Usuário pode selecionar um dia para exibir mais informações clicando em pequeno card que possui uma listra laranja</p>
-<p>O card representante do dia selecionado, fica com uma listra amarela maior que as dos cards não selecionados</p>
-<p>Caso não acha conexão com o servidor, problemas ainda não tratados poderão ocorrer na utilização do aplicativo</p>
+<p>Esse aplitivo está com o laytou otimizado para ser utilizado na orientação horizontal.</p>
+<p>Por padrão, o aplicativo inicia obtendo informações da cidade de Brasília-DF.</p>
+<p>O Usuário pode pesquisar por uma cidade utilizando um campo de pesquisa na parte superior do aplicativo.</p>
+<p>Após a pesquisa, o usuário pode selecionar uma cidade afim de obter previsões do tempo.</p>
+<p>O Usuário pode selecionar um dia para exibir mais informações clicando em pequeno card que possui uma listra laranja.</p>
+<p>O card representante do dia selecionado, fica com uma listra amarela maior que as dos cards não selecionados.</p>
+<p>Caso não acha conexão com o servidor, problemas ainda não tratados poderão ocorrer na utilização do aplicativo.</p>
 
 <h1>#Utilização</h1>
 
 <p>Atualizações futuras do app:</p>
-<p>Listar o Estado da cidade com base nas geocoordenadas, já que a api que retorna os dados não fornece o estado mas somente o nome da cidade e paîs</p>
-<p>Otimizar o layout do app para uso na orientação vertical</p>
-<p>Tratar erros de falta de conexão com o servidor</p>
-<p>Armazenar dados de pesquisas do usuário (para isso, sugere-se o RealmDB)</p>
+<p>Listar o Estado da cidade com base nas geocoordenadas, já que a api que retorna os dados não fornece o estado mas somente o nome da cidade e paîs.</p>
+<p>Otimizar o layout do app para uso na orientação vertical.</p>
+<p>Tratar erros de falta de conexão com o servidor.</p>
+<p>Armazenar dados de pesquisas do usuário (para isso, sugere-se o RealmDB).</p>
