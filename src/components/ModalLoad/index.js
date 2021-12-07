@@ -7,20 +7,24 @@ const ModalLoad = ({onRequestClose, visible, haveForecast}) => {
       animationType="fade"
       statusBarTranslucent={true}
       onRequestClose={onRequestClose}
-      visible={visible}>
-      <ModalContainer>
+      visible={visible}
+      supportedOrientations={['landScape','portrait']}
+      >
+      <ModalContainer
+      supportedOrientations={['landScape','portrait']}
+      >
         <Spinner />
-        <Info>
+        {/* <Info>
           {haveForecast
             ? 'Obtendo previsões do tempo...'
             : 'Buscando cidades...'}
-        </Info>
-        <Icon
+        </Info> */}
+        {/* <Icon
           name={haveForecast ? 'cloud' : 'search'}
           color="#fff"
           size={24}
           // style={styles.iconSeach}
-        />
+        /> */}
       </ModalContainer>
     </Container>
   );
