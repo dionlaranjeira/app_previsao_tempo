@@ -14,7 +14,7 @@
 
 
 <h1>#sobre</h1>
-<p>Esse aplicativo consulta uma API desenvolvida em python (disponivel em: https://github.com/dionlaranjeira/api-previsao-python). O usuário poderá fazer a busca por uma cidade (você pode baixar a lista de cidade disponíveis para consulta em: http://bulk.openweathermap.org/sample/), no momento em que a cidade é selecionda, é retornado uma previsão do clima para as proxímas 120 hora para a cidade escolhida.</p> 
+<p>Esse aplicativo consulta uma API desenvolvida em python (disponivel em: https://github.com/dionlaranjeira/api-previsao-python). O usuário poderá fazer a busca por uma cidade (você pode baixar a lista de cidade disponíveis para consulta em: http://bulk.openweathermap.org/sample/), no momento em que a cidade é selecionda, é retornado uma previsão do clima para as proxímas 120 horas para a cidade escolhida.</p> 
 <p>Após isso, o usuário ver as previsões do dia atual (conforme o horário do servidor). Caso o usuário queria ver as previsões de outro dia, ele poderá fazê-lo com um simples clique em um card.</p> 
 <h3>Esse aplicativo encontra-se em construção, por isso alguns tratamentos de layout de tela e falta de conexão com o servidor não foram concluídos.</h3> 
 <h3>Algumas refatorações precisam ser feitas no código, para o mesmo se torne mais fácil de compreender e dá manuntenção.</h3> 
