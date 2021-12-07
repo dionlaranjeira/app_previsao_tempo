@@ -45,6 +45,13 @@
 <p>O card representante do dia selecionado, fica com uma listra amarela maior que as dos cards não selecionados.</p>
 <p>Caso não acha conexão com o servidor, problemas ainda não tratados poderão ocorrer na utilização do aplicativo.</p>
 
+<h1>#telas</h1>
+<p>Tela inicial - Resultados da previsão do tempo de Brasília - DF</p>
+<figure align="center">
+  <img src="https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/tela_inicial.png" alt="Tela inical">
+  <figcaption>Tela inicial do aplicativo</figcaption>
+</figure>
+
 <h1>#atualizacoes</h1>
 
 <p>Atualizações futuras do app:</p>
