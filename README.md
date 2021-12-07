@@ -43,7 +43,7 @@
 <p>O card representante do dia selecionado, fica com uma listra amarela maior que as dos cards não selecionados.</p>
 <p>Caso não acha conexão com o servidor, problemas ainda não tratados poderão ocorrer na utilização do aplicativo.</p>
 
-<h1>#Utilização</h1>
+<h1>#atualizacoes</h1>
 
 <p>Atualizações futuras do app:</p>
 <p>Listar o Estado da cidade com base nas geocoordenadas, já que a api que retorna os dados não fornece o estado mas somente o nome da cidade e paîs.</p>
