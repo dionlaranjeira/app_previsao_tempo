@@ -22,6 +22,7 @@
 <p>Após isso, o usuário ver as previsões do dia atual (conforme o horário do servidor). Caso o usuário queria ver as previsões de outro dia, ele poderá fazê-lo com um simples clique em um card.</p> 
 <h3>Esse aplicativo encontra-se em construção, por isso alguns tratamentos de layout de tela e falta de conexão com o servidor não foram concluídos.</h3> 
 <h3>Algumas refatorações precisam ser feitas no código, para o mesmo se torne mais fácil de compreender e dá manuntenção.</h3> 
+<h3>O layout do aplicativo está otimizado para dispositivos Android. Em dispositivos que usem o IOS podem ocorrer alguns problemas com o layout no formato landscape</h3> 
 
 <h1>#instalacao</h1>
 <p>Esse aplicativo foi desenvolvido utilizando o FrameWork React Native, por isso, siga todas as orientações para configuração do ambiente de desenvolvimento listatas em: https://reactnative.dev/docs/0.61/enviroment-setup .</p>
