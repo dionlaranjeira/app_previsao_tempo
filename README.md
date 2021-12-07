@@ -28,7 +28,7 @@
 <h1>#instalacao</h1>
 <p>Esse aplicativo foi desenvolvido utilizando o FrameWork React Native, por isso, siga todas as orientações para configuração do ambiente de desenvolvimento listadas em: https://reactnative.dev/docs/0.61/enviroment-setup .</p>
 <p>Clone o aplicativo para sua máquina.</p>
-<p>Certifique-se que o yarn está devidamento configurado em seu ambiente de desenvolvimento.</p>
+<p>Certifique-se que o yarn está devidamente configurado em seu ambiente de desenvolvimento.</p>
 <p>Abra o terminal na pasta do aplicativo e baixe as depências utilizando o comando "yarn".</p>
 <p>No arquivo service (https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/src/service/api.js), altere a "const ip" com o endereço do servidor python, já mencionado na seção <span>#sobre</span>.</p>
 <p>Certifique-se que seu dispositivo possue conexão com o servidor python.</p>
