@@ -12,6 +12,7 @@
 <a href="#sobre">Sobre | </a>
 <a href="#instalacao">Instalação | </a>
 <a href="#instalacao">Utilização | </a>
+<a href="#telas">Telas | </a>  
 <a href="#atualizacoes">Atualizações</a>
 </p>
 
