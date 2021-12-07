@@ -49,32 +49,23 @@
 <p>Tela inicial - Resultados da previsão do tempo de Brasília - DF</p>
 <figure align="center">
   <img src="https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/tela_inicial.png" alt="Tela inical">
-  <figcaption>Tela inicial do aplicativo</figcaption>
 </figure>
 
 <p>Tela de carregamento de busca por cidades</p>
 <figure align="center">
   <img src="https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/load_cidades.png" alt="Buscando cidades">
-  <figcaption>Buscando cidades</figcaption>
 </figure>
 
-
-<p>Tela de carregamento de busca por cidades</p>
-<figure align="center">
-  <img src="https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/load_cidades.png" alt="Buscando cidades">
-  <figcaption>Buscando cidades</figcaption>
-</figure>
 
 <p>Tela de seleção por cidades</p>
 <figure align="center">
   <img src="https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/tela_lista_cidades.png" alt="Lista de cidades">
-  <figcaption>Lista de Cidades</figcaption>
 </figure>
 
-<p>Tela de carregamento de previsões</p>
+
+<p>Tela de resultados de novas previsões</p>
 <figure align="center">
-  <img src="https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/load_previsoes.png" alt="Lista de cidades">
-  <figcaption>Lista de Cidades</figcaption>
+  <img src="https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/tela_manaus.png" alt="Novas previsões">
 </figure>
 
 <h1>#atualizacoes</h1>
