@@ -70,7 +70,7 @@
 <h1>#atualizacoes</h1>
 
 <p>Atualizações futuras do app:</p>
-<p>Listar o Estado da cidade com base nas geocoordenadas, já que a api que retorna os dados não fornece o estado mas somente o nome da cidade e paîs.</p>
+<p>Listar o Estado da cidade com base nas geocoordenadas, já que a api que retorna os dados não fornece o estado mas somente o nome da cidade e país.</p>
 <p>Otimizar o layout do app para uso na orientação vertical.</p>
 <p>Tratar erros de falta de conexão com o servidor.</p>
 <p>Armazenar dados de pesquisas do usuário (para isso, sugere-se o RealmDB).</p>
