@@ -20,7 +20,7 @@
 <h3>Algumas refatorações precisam ser feitas no código, para o mesmo se torne mais fácil de compreender e dá manuntenção.</h3> 
 
 <h1>#instalacao</h1>
-<p>Esse aplicativo foi desenvolvido utilizando o FrameWork React Native, por isso siga todas as orientações para configuração do ambiente de desenvolvimento listatas em: https://reactnative.dev/docs/0.61/enviroment-setup</p>
+<p>Esse aplicativo foi desenvolvido utilizando o FrameWork React Native, por isso, siga todas as orientações para configuração do ambiente de desenvolvimento listatas em: https://reactnative.dev/docs/0.61/enviroment-setup</p>
 <p>Clone o aplicativo para sua máquina</p>
 <p>Certifique-se que o yarn está devidamento configurado em seu ambiente de desenvolvimento</p>
 <p>Abra o terminal na pasta do aplicativo e baixe as depências utilizando o comando "yarn" </>
