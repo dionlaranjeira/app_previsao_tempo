@@ -33,7 +33,7 @@ const ModalSelectCity = ({
       statusBarTranslucent={true}
       onRequestClose={onRequestClose}
       visible={visible}
-      supportedOrientations={['landScape','portrait']}>
+      supportedOrientations={['landScape', 'portrait']}>
       <ModalContainer>
         <HeaderContainer>
           <HeaderContent statusBarHeight={getStatusBarHeight(true)} />

@@ -1,15 +1,5 @@
-import React, {useState,useEffect} from 'react';
-import {
-  Button,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TextInput,
-  SafeAreaView,
-  FlatList,
-  ScrollView,
-} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, Text, View, TextInput, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import API from '../../service/api';
 import CardInfors from '../../components/CardInfors';
@@ -21,16 +11,14 @@ export default function Home() {
   const [cityName, setCityName] = useState('');
   const [citys, setCitys] = useState([]);
   const [forecast, setForecast] = useState([]);
-  const [showForecast, setShowForecast] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showModalCitys, setShowModalCitys] = useState(false);
   const [showModalForecast, setShowModalForecast] = useState(false);
   const [daySelect, setDaySelect] = useState(0);
 
-
   useEffect(() => {
     // OBTEM PREVISÃO PADRÃO - BRASÍLIA
-    getForecast(3469058)
+    getForecast(3469058);
   }, []);
 
   async function getCitys(cidade) {
@@ -43,13 +31,12 @@ export default function Home() {
     }
   }
 
-  function cardSelect(index){
-    if(index == daySelect){
+  function cardSelect(index) {
+    if (index === daySelect) {
       return true;
-    }else{
+    } else {
       return false;
     }
-
   }
 
   async function getForecast(idCidade) {
@@ -71,31 +58,16 @@ export default function Home() {
 
   const [selectedId, setSelectedId] = useState(null);
 
-  const renderItem = ({item}) => {
-    const backgroundColor = item.id === selectedId ? '#6e3b6e' : '#f9c2ff';
-    const color = item.id === selectedId ? 'white' : 'black';
-
-    return (
-      <Item
-        item={item}
-        onPress={() => getForecast(item.id)}
-        backgroundColor={{backgroundColor}}
-        textColor={{color}}
-      />
-    );
-  };
-
-  function showCardInfo (forecast) {
-    if(forecast){
+  function showCardInfo(forecast) {
+    if (forecast) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Image style={{width:"100%", height:"100%"}} source={require('../../assets/logo_linux_fundo.jpeg')} /> */}
       <View style={styles.leftConteiner}>
         <Text style={styles.textWelcome}>Seja Bem Vindo!</Text>
         <Text style={styles.textSelectCity}>Selecione uma cidade</Text>
@@ -115,20 +87,56 @@ export default function Home() {
             style={styles.iconSeach}
           />
         </View>
-        {showCardInfo(forecast[0]) &&
-        (<Text style={styles.textForecastWeek}>Previsão para a semana:</Text>)}
+        {showCardInfo(forecast[0]) && (
+          <Text style={styles.textForecastWeek}>Previsão para a semana:</Text>
+        )}
 
         <View style={styles.containerCards}>
-          
-        { showCardInfo(forecast[0]) && (<CardInfors data={forecast[0]} onPressAction={() => setDaySelect(0)} selected={cardSelect(0)}  />)}
-        { showCardInfo(forecast[1]) && (<CardInfors data={forecast[1]} onPressAction={() => setDaySelect(1)} selected={cardSelect(1)} />)}
-        { showCardInfo(forecast[2]) && (<CardInfors data={forecast[2]} onPressAction={() => setDaySelect(2)} selected={cardSelect(2)} />)}
+          {showCardInfo(forecast[0]) && (
+            <CardInfors
+              data={forecast[0]}
+              onPressAction={() => setDaySelect(0)}
+              selected={cardSelect(0)}
+            />
+          )}
+          {showCardInfo(forecast[1]) && (
+            <CardInfors
+              data={forecast[1]}
+              onPressAction={() => setDaySelect(1)}
+              selected={cardSelect(1)}
+            />
+          )}
+          {showCardInfo(forecast[2]) && (
+            <CardInfors
+              data={forecast[2]}
+              onPressAction={() => setDaySelect(2)}
+              selected={cardSelect(2)}
+            />
+          )}
         </View>
 
         <View style={styles.containerCards}>
-        { showCardInfo(forecast[3]) && (<CardInfors data={forecast[3]} onPressAction={() => setDaySelect(3)} selected={cardSelect(3)} />)}
-        { showCardInfo(forecast[4]) && (<CardInfors data={forecast[4]} onPressAction={() => setDaySelect(4)} selected={cardSelect(4)} />)}
-        { showCardInfo(forecast[5]) && (<CardInfors data={forecast[5]} onPressAction={() => setDaySelect(5)} selected={cardSelect(5)} />)}
+          {showCardInfo(forecast[3]) && (
+            <CardInfors
+              data={forecast[3]}
+              onPressAction={() => setDaySelect(3)}
+              selected={cardSelect(3)}
+            />
+          )}
+          {showCardInfo(forecast[4]) && (
+            <CardInfors
+              data={forecast[4]}
+              onPressAction={() => setDaySelect(4)}
+              selected={cardSelect(4)}
+            />
+          )}
+          {showCardInfo(forecast[5]) && (
+            <CardInfors
+              data={forecast[5]}
+              onPressAction={() => setDaySelect(5)}
+              selected={cardSelect(5)}
+            />
+          )}
         </View>
       </View>
       <CardInforFull data={forecast[daySelect]} />
@@ -179,7 +187,7 @@ const styles = StyleSheet.create({
 
   textForecastWeek: {
     color: '#fff',
-    marginTop:4,
+    marginTop: 4,
     marginBottom: 4,
     fontWeight: 'bold',
     fontSize: 10,
@@ -200,8 +208,6 @@ const styles = StyleSheet.create({
   },
 
   conteinerFindCity: {
-    marginTop: 8,
-    marginBottom: 8,
     flexDirection: 'row',
     alignContent: 'center',
     alignItems: 'center',
