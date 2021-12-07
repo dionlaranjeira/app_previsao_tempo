@@ -3,6 +3,10 @@
 
 <h3 align="center">PROJETO EM CONSTRUÇÃO</h1>
 
+<figure>
+  <img src="https://github.com/dionlaranjeira/app_previsao_tempo/blob/main/tela_inicial.png" alt="Tela inical">
+  <figcaption>Tela inicial do aplicativo</figcaption>
+</figure>
 
 <p align="center">
 <a href="#sobre">Sobre | </a>
