@@ -35,7 +35,7 @@
 <h1>#Utilização</h1>
 
 
-<p>Esse aplitivo está com o laytou otimizado para ser utilizado na orientação horizontal.</p>
+<p>Esse aplicativo está com o layout otimizado para ser utilizado na orientação horizontal.</p>
 <p>Por padrão, o aplicativo inicia obtendo informações da cidade de Brasília-DF.</p>
 <p>O Usuário pode pesquisar por uma cidade utilizando um campo de pesquisa na parte superior do aplicativo.</p>
 <p>Após a pesquisa, o usuário pode selecionar uma cidade afim de obter previsões do tempo.</p>
